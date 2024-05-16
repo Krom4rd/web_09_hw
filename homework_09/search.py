@@ -1,5 +1,5 @@
-from homeword_09.models import Authors, Quote
-from homeword_09.connect_mongo import connect
+from models import Authors, Quote
+from connect_mongo import connect
 
 
 def search_quotes(query):

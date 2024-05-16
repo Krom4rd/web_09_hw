@@ -1,7 +1,7 @@
 import json
-from homeword_09.models import Authors, Quote, Tag
+from models import Authors, Quote, Tag
 from mongoengine.errors import DoesNotExist
-from homeword_09.connect_mongo import connect
+from connect_mongo import connect
 from datetime import datetime
 # from dateutil import parser
 connect
@@ -42,5 +42,5 @@ def load_quotes_from_json(file_path):
 
 
 if __name__ == "__main__":
-    load_authors_from_json("authors.json")
-    load_quotes_from_json("qoutes.json")
+    load_authors_from_json("homework_09/authors.json")
+    load_quotes_from_json("homework_09/quotes.json")

@@ -2,7 +2,7 @@ import scrapy
 
 class AuthorsSpider(scrapy.Spider):
     name = 'authors'
-    custom_settings = {"FEED_FORMAT": "json", "FEED_URI": "mongo/authors.json"}
+    custom_settings = {"FEED_FORMAT": "json", "FEED_URI": "homework_09/authors.json"}
     allowed_domains = ['quotes.toscrape.com']
     start_urls = ['http://quotes.toscrape.com/']
 
@@ -19,8 +19,8 @@ class AuthorsSpider(scrapy.Spider):
     def parse_author(self, response):
         for author in response.xpath("//div[@class='author-details']"):
             yield {
-                    'fullname': author.xpath("//h3[@class='author-title']/text()").extract(),
-                    'born_date': author.xpath("//p/span[@class='author-born-date']/text()").extract(),
-                    'born_location': author.xpath("//p/span[@class='author-born-location']/text()").extract(),
+                    'fullname': author.xpath("//h3[@class='author-title']/text()").get(),
+                    'born_date': author.xpath("//p/span[@class='author-born-date']/text()").get(),
+                    'born_location': author.xpath("//p/span[@class='author-born-location']/text()").get(),
                     'description': author.xpath("//div[@class='author-description']/text()").extract()[0].strip(),
                 }

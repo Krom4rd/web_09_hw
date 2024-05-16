@@ -2,7 +2,7 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = 'quotes'
-    custom_settings = {"FEED_FORMAT": "json", "FEED_URI": "mongo/quotes.json"}
+    custom_settings = {"FEED_FORMAT": "json", "FEED_URI": "homework_09/quotes.json"}
     allowed_domains = ['quotes.toscrape.com']
     start_urls = ['http://quotes.toscrape.com/']
 
